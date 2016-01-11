@@ -1,16 +1,43 @@
 <html>
 	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Node</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 	<body>
-		{{#if isAuth}}
-        	<span>Welcome {{login}}</span>
-    	{{/if}}
-		{{#unless isAuth}}
-			<form action="/login" method="post">
-				<input type="text" id="username" name="username">
-				<input type="password" id="password" name="password">
-				<button type="submit">Submit</button>
-			</form>
-		{{/unless}}
+		<header>
+			<div id="head_form">
+				<div id="logo"></div>
+				{{#if isAuth}}
+					<form id="login_form" action="/logout" method="post">
+						<ul>
+							<li>
+								<label>Welcome {{login}}</label>
+							</li>
+							<li>
+								<button class="submit" type="submit">Выйти</button>
+							</li>
+						</ul>
+					</form>
+		    	{{/if}}
+				{{#unless isAuth}}
+					<form id="login_form" action="/login" method="post">
+						<ul>
+							<li class="line">
+								<label for="username">Логин</label>
+								<input type="text" id="username" name="username">
+							</li>
+							<li class="line">
+								<label for="password">Пароль</label>
+								<input type="password" id="password" name="password">
+							</li>
+							<li>
+								<button class="submit" type="submit">Войти</button>
+							</li>
+						</ul>
+					</form>
+				{{/unless}}
+			</div>
+		</header>
 	</body>
 </html>
