@@ -78,6 +78,7 @@ app.post('/login',
 app.get("/content", isLoggedIn, function (req, res) {
     res.send("Congratulations! you've successfully logged in.");
 });
+app.post('/logout', HomeController.LogOut);
 
 app.all('/*', isLoggedIn);
 

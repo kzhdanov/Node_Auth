@@ -5,6 +5,10 @@ Actions.Index = function(req, res) {
 		login = req.user
 
 	res.render('index', { 'isAuth': req.isAuthenticated(), 'login': login });
+},
+Actions.LogOut = function(req, res) {
+	req.logout();
+	res.redirect('/');
 }
 
 module.exports = Actions;
