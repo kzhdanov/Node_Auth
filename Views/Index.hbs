@@ -1,0 +1,16 @@
+<html>
+	<head>
+	</head>
+	<body>
+		{{#if isAuth}}
+        	<span>Welcome {{login}}</span>
+    	{{/if}}
+		{{#unless isAuth}}
+			<form action="/login" method="post">
+				<input type="text" id="username" name="username">
+				<input type="password" id="password" name="password">
+				<button type="submit">Submit</button>
+			</form>
+		{{/unless}}
+	</body>
+</html>
