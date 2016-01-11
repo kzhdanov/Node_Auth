@@ -4,6 +4,8 @@ module.exports = {
 	entry: "./Public/Scripts/main",
 	output: {
 	    path: "./Public/Scripts",
-		filename: "build.js"
-	}
+	    filename: "build.js",
+        library: "main"
+	},
+    watch: true
 }
