@@ -7,5 +7,12 @@ module.exports = {
 	    filename: "build.js",
         library: "main"
 	},
-    watch: true
+    watch: true,
+    module: {
+
+    	loaders: [{
+    		test: /\.js$/,
+    		loader: 'babel'
+    	}]
+    }
 }
