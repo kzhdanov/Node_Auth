@@ -9,7 +9,6 @@ module.exports = {
 	},
     watch: true,
     module: {
-
     	loaders: [{
     		test: /\.js$/,
     		loader: 'babel'

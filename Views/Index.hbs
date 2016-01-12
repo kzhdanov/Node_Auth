@@ -34,8 +34,14 @@
 							<li>
 								<button class="submit" type="submit">Войти</button>
 							</li>
+							<li class="ErrorMessage">
+								{{#if ErrorMsg}}
+									<span>{{ErrorMsg}}</span>
+								{{/if}}
+							</li>
 						</ul>
 					</form>
+
 				{{/unless}}
 			</div>
 		</header>
