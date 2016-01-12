@@ -36,10 +36,10 @@
 #login_form li:first-child {
 	margin: 10% 4% 2% 0;
 }
-#login_form li:nth-child(3) {
+
+#login_form li.btn {
 	height: 4%;
 }
-
 /* === Button Style === */
 button.submit {
 	background-color: #e5e2dc;
