@@ -6,7 +6,7 @@ var conf = require('./config');
 var pool = mysql.createPool(conf);
 var Users = require('./Models/Users')(pool);
 var Passwords = require('./Models/Password')(pool);
-
+var ErrorController = require('./Controllers/Error');
 var HomeController = require('./Controllers/Home');
 var templating = require('consolidate');
 var passport = require('passport');
@@ -21,7 +21,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(require('express-session')({
-    secret: "tHiSiSasEcRetStr123457774123123kj",
+    secret: "@keyCryptoToketOloloFatality2009-2016@",
     resave: true,
     saveUninitialized: true })
 );
@@ -66,7 +66,7 @@ passport.deserializeUser(function (id, done) {
 app.get('/', HomeController.Index);
 
 app.post('/login',  
-    passport.authenticate("local", { failureRedirect: "/failure"}),
+    passport.authenticate("local", { failureRedirect: "/?error=AuthError" }),
     function (req, res) {
         var hour = 3600000;
         req.session.cookie.expires = new Date(Date.now() + hour);

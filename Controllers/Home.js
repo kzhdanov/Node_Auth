@@ -1,5 +1,9 @@
 var Actions = {};
 Actions.Index = function(req, res) {
+	if(req.query.error) {
+		return res.render('index', { 'isAuth': false, 'ErrorMsg' : 'Ошибка авторизации' });
+	}
+
 	var login = "Unauthorized";
 	if(req && req.user)
 		login = req.user
