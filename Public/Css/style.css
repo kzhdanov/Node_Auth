@@ -1,3 +1,6 @@
+body {
+	margin: 0;
+}
 #head_form {
 	display: flex;
     flex-direction: row-reverse;
@@ -10,14 +13,13 @@
 	font-size: medium;
 }
 #logo {
-	height: 21%;
+	height: 20%;
 }
 #login_form {
 	width: 22%;
 	margin-bottom: 0 !important;
 	background: #f3f1ed;
 	border-left: 1px solid wheat;
-	border-bottom: 1px solid wheat;
 }
 #login_form ul {
     width:100%;
@@ -29,7 +31,7 @@
 #login_form li {
 	display: flex;
 	flex-direction: row-reverse;
-	height: 3%;
+	height: auto;
 	margin: 4% 4% 2% 0;
 }
 
