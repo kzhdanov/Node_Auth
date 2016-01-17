@@ -12,6 +12,7 @@ var templating = require('consolidate');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var passHash = require('password-hash');
+var cookieUtils = require('./Utils/Utils');
 
 app.engine('hbs', templating.handlebars);
 app.set('view options', { layout: 'layout' });
@@ -68,9 +69,7 @@ app.get('/', HomeController.Index);
 app.post('/login',  
     passport.authenticate("local", { failureRedirect: "/?error=AuthError" }),
     function (req, res) {
-        var hour = 3600000;
-        req.session.cookie.expires = new Date(Date.now() + hour);
-        req.session.cookie.maxAge = hour;
+        cookieUtils(conf, req);
         res.redirect('/content');
     }
 );

@@ -4,5 +4,6 @@ module.exports =
 	host: 'localhost',
 	database: 'Tasks', 
 	user: 'kostya',
-	password: 'Speedfire41'
+	password: 'Speedfire41',
+	cookieTime: 86400
 }
